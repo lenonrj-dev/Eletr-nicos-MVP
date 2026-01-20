@@ -29,9 +29,7 @@ export default function OrderSummary({
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-sm font-semibold text-neutral-900">Resumo do pedido</p>
-          <p className="mt-1 text-xs text-neutral-500">
-            Itens do carrinho e total final.
-          </p>
+          <p className="mt-1 text-xs text-neutral-500">Itens do carrinho e total final.</p>
         </div>
 
         <Link
@@ -56,17 +54,11 @@ export default function OrderSummary({
             </div>
 
             <div className="min-w-0 flex-1">
-              <p className="truncate text-xs font-semibold text-neutral-900">
-                {l.product.title}
-              </p>
-              <p className="mt-1 text-[11px] text-neutral-500">
-                Qty: {l.qty} • {l.product.category}
-              </p>
+              <p className="truncate text-xs font-semibold text-neutral-900">{l.product.title}</p>
+              <p className="mt-1 text-[11px] text-neutral-500">Qty: {l.qty} • {l.product.category}</p>
             </div>
 
-            <p className="text-xs font-semibold text-neutral-900">
-              {formatPrice(l.product.price * l.qty)}
-            </p>
+            <p className="text-xs font-semibold text-neutral-900">{formatPrice(l.product.price * l.qty)}</p>
           </div>
         ))}
       </div>
@@ -76,24 +68,18 @@ export default function OrderSummary({
       <div className="mt-5 space-y-3">
         <div className="flex items-center justify-between text-sm text-neutral-700">
           <span>Subtotal</span>
-          <span className="font-semibold text-neutral-900">
-            {formatPrice(subtotal)}
-          </span>
+          <span className="font-semibold text-neutral-900">{formatPrice(subtotal)}</span>
         </div>
 
         <div className="flex items-center justify-between text-sm text-neutral-700">
           <span>Frete</span>
-          <span className="font-semibold text-neutral-900">
-            {formatPrice(shipping)}
-          </span>
+          <span className="font-semibold text-neutral-900">{formatPrice(shipping)}</span>
         </div>
 
         {discount > 0 ? (
           <div className="flex items-center justify-between text-sm text-neutral-700">
             <span>Desconto</span>
-            <span className="font-semibold text-neutral-900">
-              − {formatPrice(discount)}
-            </span>
+            <span className="font-semibold text-neutral-900">− {formatPrice(discount)}</span>
           </div>
         ) : null}
 
@@ -101,22 +87,16 @@ export default function OrderSummary({
 
         <div className="flex items-center justify-between text-sm text-neutral-700">
           <span>Total</span>
-          <span className="text-lg font-semibold text-neutral-900">
-            {formatPrice(total)}
-          </span>
+          <span className="text-lg font-semibold text-neutral-900">{formatPrice(total)}</span>
         </div>
       </div>
 
       <div className="mt-6 rounded-2xl bg-neutral-50 p-4">
         <p className="text-xs font-semibold text-neutral-900">Proteção de compra</p>
-        <p className="mt-1 text-xs text-neutral-600">
-          Você verá o pagamento no Stripe quando o backend estiver conectado.
-        </p>
+        <p className="mt-1 text-xs text-neutral-600">Você verá o pagamento no Stripe quando o backend estiver conectado.</p>
       </div>
 
-      <p className="mt-4 text-xs text-neutral-500">
-        Seus dados serão usados apenas para processar o pedido.
-      </p>
+      <p className="mt-4 text-xs text-neutral-500">Seus dados serão usados apenas para processar o pedido.</p>
     </div>
   );
 }
